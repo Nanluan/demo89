@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            top: 40px;
+            width: 100px;
+            height: 100px;
+            background-color: #0bd;
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button>点击移动</button>
+    <script>
+        // 目标对象 目标位置
+        function animate(obj,target,callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var step = (target - obj.offsetLeft) / 10;
+                if(obj.offsetLeft == target){
+                    clearInterval(obj.timer);
+                    // obj.style.left = 0;
+                    if(callback){
+                        callback();
+                    }
+                }
+                obj.style.left = obj.offsetLeft + step + 'px';
+
+        },100);
+        }
+        var div = document.querySelector('div');
+        var btn = document.querySelector('button');
+        btn.addEventListener('click',function(){
+            animate(div,200,function(){});
+        })
+        // animate(div,300);
+
+        // // div.style.left = div.offsetLeft + 1 + 'px';
+        // var timer = setInterval(function(){
+        //     if(div.offsetLeft >= 400){
+        //         clearInterval(timer);
+        //         div.style.left = 0;
+        //     }
+        //     div.style.left = div.offsetLeft + 3 + 'px';
+
+        // },100);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+
+        }
+        tr,th{
+            border-bottom: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="checkall">
+                </th>
+                <th>商品</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tbody id="ths">
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+            <tr>
+                <th>
+                    <input type="checkbox">
+                </th>
+                <th>1</th>
+                <th>1</th>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var hth = document.getElementById('checkall');
+        var ths = document.getElementById('ths').getElementsByTagName('input');
+        hth.onclick = function(){
+            for(var i=0;i<ths.length;i++){
+                ths[i].checked = this.checked;
+            }
+        }
+        // 点击两次 每点一次都要检查其他框有没有被选中
+        for(var i=0;i<ths.length;i++){
+            ths[i].onclick = function(){
+                var flag=true;
+                for(var i=0;i<ths.length;i++){
+                    if(!ths[i].checked){
+                    flag=false;
+                }
+            }
+            hth.checked = flag;
+            }
+            
+        }
+    </script>
+</body>
+</html>

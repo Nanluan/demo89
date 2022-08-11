@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">2022-2-2</div>
+    <ul>
+        <li>知否知否应是绿肥红瘦</li>
+        <li>知否知否应是绿肥红瘦</li>
+        <li>知否知否应是绿肥红瘦</li>
+        <li>知否知否应是绿肥红瘦</li>
+    </ul>
+    <ol>
+        <li>知否</li>
+        <li>知否</li>
+        <li>知否</li>
+        <li>知否</li>
+    </ol>
+    <script>
+        var timer = document.getElementById('time');
+        console.log(timer);
+        console.dir(timer);
+        var str = document.getElementsByTagName('li');
+        console.log(str);
+        console.log(str[0]);
+        var element = document.getElementsByTagName('ol');
+        var lis = element[0].getElementsByTagName('li');
+        console.log(lis[0]);
+    </script>
+</body>
+</html>

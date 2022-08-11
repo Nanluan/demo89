@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            background: #c4b1b1;
+            box-shadow:  12px 12px 13px #978888,
+             -12px -12px 13px #f1dada;
+        }
+    </style>
+    <script>
+        // 创建对象方法一 字面量
+        var obj={
+            uname:'张三',
+            age:13,
+            sex:'男',
+            getName:function(){
+                console.log(obj.uname);
+            }
+        };
+        obj.getName();
+
+        // 方法二 new Object
+        var obj=new Object();
+        obj.iname='李四';
+
+        // 方法三 构造函数创建对象
+        function Star(uname,age,sex){
+            this.name=uname;
+            this.age=age;
+            this.sex=sex;
+        }
+        var pink=new Star('pink',18,'男');
+        console.log(pink.name);
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

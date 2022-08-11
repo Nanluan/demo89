@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        <label for="">
+            <img src="" alt="" id="p1">
+        </label>
+        <input type="password" id="in">
+    </div>
+    <script>
+        var eye = document.getElementById('p1');
+        var pwd = document.getElementById('in');
+        var flag=0;
+        eye.onclick = function(){
+            if(flag==0){
+                pwd.type = 'text';
+                eye.src='';
+                flag=1;
+            }
+            else{
+                eye.type = 'password';
+                eye.src = '';
+                flag=0;  
+            }
+        }
+    </script>
+</body>
+</html>

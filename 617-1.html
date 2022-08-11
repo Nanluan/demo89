@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <p>
+        1111
+        <span>123</span>
+    </p>
+    <script>
+        var txt = document.querySelector('p');
+        var div = document.querySelector('div');
+        // innerText 和 innerHtml 的区别
+        // innerText 不能识别html标签 去掉空格和换行 非标准
+        // innerHtml 能识别html标签 W3C标准 保留空格和换行
+        // 这两个可读写 可获取里面的内容
+        div.innerHTML = '<strong>文字</strong>'
+        console.log(txt.innerText);
+        console.log(txt.innerHTML);
+        console.log(div.innerHTML);
+        
+    </script>
+</body>
+</html>

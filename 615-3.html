@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr=[3,2,1];
+        // 数组翻转
+        console.log(arr.reverse());
+        // 数组排序 注：此函数只能对个位数的进行排序
+        var arr1=[2,1,8,9,3];
+        arr1.sort();
+        console.log(arr1);
+        // 若要对两位数进行排序，用此方法
+        var arr2=[22,35,11,45];
+        console.log(arr2.sort(function(a,b){
+            return a-b;
+        }));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

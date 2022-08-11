@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* width: 100%; */
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <button id="p1">picture1</button>
+    <button id="p2">picture2</button>
+    <img src="./images/53c83a16a7a4eb05280184c26f91540b.jpeg" alt="" title="picture1">
+    <!-- <img src="./images/摄图网_501100934_海滩（非企业商用）.jpg" alt=""> -->
+    <script>
+        var p1 = document.getElementById('p1');
+        var p2 = document.getElementById('p2');
+        var img = document.querySelector('img');
+        p2.onclick = function (){
+            img.src = "./images/摄图网_501100934_海滩（非企业商用）.jpg";
+            img.title = 'picture2';
+        }
+        p1.onclick = function (){
+            img.src = "./images/53c83a16a7a4eb05280184c26f91540b.jpeg";
+        }
+    </script>
+</body>
+</html>

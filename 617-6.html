@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #111;
+            /* color:black; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <button>关灯</button>
+    <script>
+        var div = document.querySelector('div');
+        var btn = document.querySelector('button');
+        var flag = 0;
+        btn.onclick = function(){
+            if(flag==0){
+                div.style.backgroundColor = 'aliceblue';
+                btn.innerHTML = '开灯';
+                flag=1;
+            }
+            else{
+                div.style.backgroundColor = 'black';
+                btn.innerHTML = '关灯';
+                flag=0;
+            }
+
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: antiquewhite;
+            /* color: antiquewhite; */
+        }
+    </style>
+</head>
+<body>
+    <div>延时变色</div>
+    <script>
+        var div=document.querySelector('div');
+        // 这里的window的调用可以省略
+        window.setTimeout(function(){
+            div.style.backgroundColor = '#0bd';
+        },5000);
+
+        setTimeout(function(){
+            div.style.backgroundColor = '#0bd';
+        },5000);
+
+        // 如有多个定时器 可以给定时器赋值标识符来解决
+        function fn () {
+            alert(1);
+        }
+        var time1 = setTimeout(fn,2000); 
+        var time2 = setTimeout(fn,4000); 
+    </script>
+</body>
+</html>

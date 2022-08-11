@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 猜数字
+        function getNum(min,max) {
+            return Math.floor(Math.random()*(max-min+1))+min;
+        }
+        var num=getNum(1,10);
+        while(true) {
+            var anum=prompt('');
+            if(anum>num){
+                alert('大了');
+            }
+            else if(anum<num){
+                alert('小了');
+            }
+            else
+            {
+                alert('true');
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

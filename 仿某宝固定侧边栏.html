@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider-bar {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            width: 28px;
+            height: 90px;
+            background-color: salmon;
+            /* text-align: center; */
+            border-radius: 5px;
+        }
+
+        .slider-bar span {
+            padding-left: 6px;
+            display: none;
+            position: absolute;
+
+        }
+
+        .header {
+            width: 1000px;
+            height: 200px;
+            background-color: #96a48b;
+            margin: 0 auto;
+        }
+
+        .banner {
+            width: 1000px;
+            height: 200px;
+            background-color: #d8caaf;
+            margin: 10px auto;
+        }
+
+        .main {
+            width: 1000px;
+            height: 800px;
+            background-color: #a27e7e;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider-bar">
+        <span class="goBack">返回顶部 </span>
+    </div>
+    <div class="header">header</div>
+    <div class="banner">banner</div>
+    <div class="main">main</div>
+    <script>
+        var sliderbar = document.querySelector('.slider-bar');
+        var banner = document.querySelector('.banner');
+        var main = document.querySelector('.main');
+        var goBack = document.querySelector('.goBack');
+        var sliderbarTop = sliderbar.offsetTop - banner.offsetTop;
+        document.addEventListener('scroll',function(){
+            console.log(window.pageYOffset);
+            if(window.pageYOffset >= banner.offsetTop) {
+                sliderbar.style.position = 'fixed';
+                sliderbar.style.top = sliderbarTop + 'px';
+            }
+            else{
+                sliderbar.style.position = 'absolute';
+                sliderbar.style.top = 300 + 'px';
+            }
+            if(window.pageYOffset >= main.offsetTop){
+                goBack.style.display = 'block'
+            }
+            else{
+                goBack.style.display = 'none'
+
+            }
+        })
+
+        goBack.addEventListener('click',function(){
+            // window.scroll(0,0);
+
+            animate(window,0)
+        })
+
+        function animate(obj,target,callback) {
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+        var step = (target - window.pageYOffset) / 10;
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+        if(window.pageYOffset == target){
+            clearInterval(obj.timer);
+            // obj.style.left = 0;
+            // 方法一
+            if(callback){
+                callback();
+            }
+            // 方法二
+            //  callback && callback();
+        }
+        // obj.style.left = window.pageYOffset + step + 'px';
+        window.scroll(0,window.pageYOffset + step);
+
+},100);
+}
+    </script>
+</body>
+</html>

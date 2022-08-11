@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav {
+            width: 20%;
+            height: 40px;
+            line-height: 22px;
+            /* background-color: #0bd; */
+            margin: 0 auto;
+            padding: 5px;
+        }
+
+        .nav li {
+            position: relative;
+            float: left;
+            width: 34px;
+            margin-right: 20px;
+        }
+        
+        .nav li ul{
+            /* display: none; */
+            /* background-color: antiquewhite; */
+            position: absolute;
+            left: 0;
+            top: 26px;
+        }
+        
+        .nav li ul a{
+            /* border-left: 1px solid #000; */
+            /* border-right: 1px solid #000; */
+            border-bottom: 1px solid #000;
+            /* border-top: 1px solid #000; */
+            background-color: #0bd;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>
+                <a>微博</a>
+                <ul>
+                    <li><a>私信</a></li>
+                    <li><a>评论</a></li>
+                    <li><a>@我</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>微博</a>
+                <ul>
+                    <li><a>私信</a></li>
+                    <li><a>评论</a></li>
+                    <li><a>@我</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>微博</a>
+                <ul>
+                    <li><a>私信</a></li>
+                    <li><a>评论</a></li>
+                    <li><a>@我</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>微博</a>
+                <ul>
+                    <li><a>私信</a></li>
+                    <li><a>评论</a></li>
+                    <li><a>@我</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <script>
+        var div = document.querySelector('.nav');
+        // console.log(ul);
+        var ul = div.querySelector('ul')
+        var lis = ul.children;
+        console.log(lis);
+        for(var i = 0;i<lis.length;i++){
+            lis[i].onmouseover = function(){
+                this.children[1].style.display = 'block';
+                this.style.borderBottom = '2px solid #0bd';
+                // this.children[1].style.backGroundColor = 'antiquewhite';
+            }
+            lis[i].onmouseout = function(){
+                this.children[1].style.display = 'none';
+                this.style.borderBottom = '';
+            }
+                
+            }
+        
+    </script>
+</body>
+</html>
